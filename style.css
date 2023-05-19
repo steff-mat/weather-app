@@ -45,7 +45,7 @@ body {
 
 #location_body,
 #weather_body {
-  height: calc(100dvh - 3rem);
+  height: calc(100svh - 3rem);
   width: auto;
   border-radius: 1rem;
   margin: 1rem;
