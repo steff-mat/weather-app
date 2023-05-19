@@ -220,12 +220,12 @@ body {
 
 @media (prefers-color-scheme: dark) {
   body {
-    background-color: black;
+    background-color: #292929;
   }
 }
 
 @media (prefers-color-scheme: light) {
   body {
-    background-color: white;
+    background-color: #e5e5e5;
   }
 }
