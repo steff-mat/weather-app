@@ -1,34 +1,182 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+:root {
+  --shadow: 5px 5px 15px rgba(0, 0, 0, 0.5);
+}
+
+* {
+  box-sizing: border-box;
+  border-radius: 1rem;
+  font-family: 'Roboto', sans-serif;
+}
+
+p {
+  margin: 0 0.5rem;
+  display: grid;
+  text-align: center;
+  align-items: center;
+  justify-items: center;
+}
+
 body {
+  margin: 0;
   display: grid;
   grid-template-columns: 1fr 2fr;
+  gap: 1rem;
+  background-color: black;
 }
 
 #location_body {
-  background-color: lightblue;
-  display: grid;
   grid-template-rows: 3fr 1fr;
+  background-color: rgb(50, 50, 50);
 }
 
 #weather_body {
-  background-color: lightsalmon;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  background-color: rgb(50, 50, 50);
+}
+
+#location_body,
+#weather_body,
+#country_box,
+#search_box {
+  display: grid;
+  align-items: center;
+  justify-items: center;
+  box-shadow: var(--shadow);
 }
 
 #location_body,
 #weather_body {
   height: 100dvh;
   width: auto;
+  border-radius: 1rem;
 }
 
 #country_box {
   grid-row: 1/2;
-  width: 1fr;
-  height: 1fr;
-  background-color: lightcyan;
+  width: 85%;
+  height: 85%;
+  background-color: rgb(100, 100, 100);
 }
 
 #search_box {
   grid-row: 2/3;
-  width: 1fr;
-  height: 1fr;
-  background-color: lightgreen;
+  grid-template-rows: 1fr 1fr;
+  width: 85%;
+  height: 85%;
+  background-color: rgb(100, 100, 100);
+}
+
+#search_bar,
+#get_weather_button {
+  width: 85%;
+  min-height: 50%;
+  font-size: 2rem;
+  text-align: center;
+  box-shadow: var(--shadow);
+  background-color: rgb(150, 150, 150);
+  display: grid;
+}
+
+#search_bar::placeholder {
+  color: black;
+}
+
+.country,
+.city,
+.time_zone,
+.time {
+  background-color: rgb(150, 150, 150);
+  display: grid;
+  width: 85%;
+  min-height: 50%;
+  font-size: 2rem;
+  text-align: center;
+  justify-items: center;
+  box-shadow: var(--shadow);
+}
+
+.condition,
+.wind,
+.temperature {
+  width: 85%;
+  height: 85%;
+  font-size: 3rem;
+  display: grid;
+  align-items: center;
+  justify-items: center;
+  box-shadow: var(--shadow);
+  background-color: rgb(100, 100, 100);
+}
+
+.condition {
+  font-size: 3rem;
+}
+
+.condition img {
+  width: 50%;
+}
+
+.direction,
+.speed,
+.reported,
+.feels_like {
+  display: grid;
+  align-items: center;
+  justify-items: center;
+  box-shadow: var(--shadow);
+  width: 85%;
+  height: 85%;
+  background-color: rgb(150, 150, 150);
+}
+
+.reported_temperature {
+  font-size: 7.5rem;
+}
+
+[class*='set_'] {
+  font-size: 3rem;
+}
+
+.wind_direction,
+.wind_speed,
+.feels_like_temp {
+  font-size: 4rem;
+}
+
+@media (max-width: 768px) {
+  body {
+    grid-template-rows: auto;
+  }
+  #location_body,
+  #weather_body {
+    width: 100vw;
+  }
+  #location_body {
+    grid-row: 1/2;
+  }
+  #weather_body {
+    grid-row: 2/3;
+  }
+  .condition {
+    grid-column: 1/3;
+  }
+  #search_bar,
+  #get_weather_button,
+  .country,
+  .city,
+  .time_zone,
+  .time,
+  .condition,
+  .wind,
+  .temperature,
+  .reported_temperature,
+  .wind_direction,
+  .wind_speed,
+  .feels_like_temp,
+  [class*='set_'] {
+    font-size: 1rem;
+  }
 }

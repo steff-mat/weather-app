@@ -13,10 +13,34 @@ const windSpeed = document.querySelector('.wind_speed');
 const reportedTemperature = document.querySelector('.reported_temperature');
 const feelsLike = document.querySelector('.feels_like_temp');
 
-getWeatherButton.addEventListener('click', (e) => {
-  e.preventDefault(); //! Remove once done
-  getRawData(searchBar.value);
-});
+const cities = [
+  'Budapest',
+  'Bucuresti',
+  'Milano',
+  'Manila',
+  'Cairo',
+  'Berlin',
+  'Paris',
+  'Barcelona',
+];
+
+// getRawData('Budapest');
+console.log(cities[0]);
+// setInterval(getCity(cities), 1000);
+// function getCity(x) {
+//   for (let i = 0; i < cities.length; i++) {
+//     console.log(x[i]);
+//     return x[i];
+//   }
+// }
+//   getRawData(setInterval(cities[i], 1000));
+
+// getWeatherButton.addEventListener('click', (e) => {
+//   e.preventDefault(); //! Remove once done
+//   if (searchBar.value !== '') {
+//     getRawData(searchBar.value);
+//   }
+// });
 
 async function getRawData(userCity) {
   country.innerText = '...';
@@ -32,7 +56,7 @@ async function getRawData(userCity) {
   conditionImg.alt = '';
   try {
     const response = await fetch(
-      `http://api.weatherapi.com/v1/current.json?key=${apiKey}&q=${userCity}&aqi=no`
+      `http://api.weatherapi.com/v1/current.json?key=${apiKey}&q=${userCity}&days=3&aqi=no`
     );
     const rawData = await response.json();
     country.innerText = rawData.location.country;
@@ -41,8 +65,8 @@ async function getRawData(userCity) {
     currentTime.innerText = rawData.location.localtime;
     windDirection.innerText = rawData.current.wind_dir;
     windSpeed.innerText = rawData.current.wind_kph + 'km/h';
-    reportedTemperature.innerText = rawData.current.temp_c + '*C';
-    feelsLike.innerText = rawData.current.feelslike_c + '*C';
+    reportedTemperature.innerText = rawData.current.temp_c + '°C';
+    feelsLike.innerText = rawData.current.feelslike_c + '°C';
     conditionImg.src = rawData.current.condition.icon;
     conditionImg.alt = rawData.current.condition.text;
     conditionText.innerText = rawData.current.condition.text;

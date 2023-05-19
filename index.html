@@ -27,7 +27,7 @@
           <p class="set_time_zone"></p>
         </div>
         <div class="time">
-          <p>Current Time:</p>
+          <p>Date & Time:</p>
           <p class="set_time"></p>
         </div>
       </div>
@@ -37,6 +37,7 @@
           name="get_data"
           id="search_bar"
           placeholder="Enter city name"
+          required
         />
         <button type="submit" id="get_weather_button">Get Weather</button>
       </form>
@@ -64,6 +65,10 @@
           <p>Feels Like</p>
           <p class="feels_like_temp"></p>
         </div>
+      </div>
+      <div class="other">
+        <p class="other_data"></p>
+        <p class="other_text"></p>
       </div>
     </div>
     <script src="script.js"></script>
