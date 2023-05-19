@@ -22,7 +22,6 @@ body {
   margin: 0;
   display: grid;
   grid-template-columns: 1fr 2fr;
-  gap: 1rem;
   background-color: black;
   transition: all 500ms;
 }
@@ -48,9 +47,10 @@ body {
 
 #location_body,
 #weather_body {
-  height: 100dvh;
+  height: calc(100dvh - 2rem);
   width: auto;
   border-radius: 1rem;
+  margin: 1rem;
 }
 
 #country_box {
