@@ -99,11 +99,11 @@ body {
 }
 
 #search_bar {
-  grid-row: 3/4;
+  grid-row: 2/3;
 }
 
 #get_weather_button {
-  grid-row: 2/3;
+  grid-row: 3/4;
 }
 
 .country,
@@ -181,6 +181,14 @@ body {
 #get_weather_button:hover,
 #get_weather_button:active {
   background-color: rgba(255, 255, 255, 0.75);
+}
+
+.hidden {
+  display: none;
+}
+
+.ct {
+  color: transparent;
 }
 
 @media (max-width: 768px) {
