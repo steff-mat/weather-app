@@ -19,7 +19,7 @@ p {
 }
 
 body {
-  margin: 0;
+  /* margin: 0; */
   display: grid;
   grid-template-columns: 1fr 2fr;
   background-color: black;
@@ -47,7 +47,7 @@ body {
 
 #location_body,
 #weather_body {
-  height: calc(100dvh - 2rem);
+  height: calc(100dvh - 3rem);
   width: auto;
   border-radius: 1rem;
   margin: 1rem;
@@ -55,15 +55,15 @@ body {
 
 #country_box {
   grid-row: 1/2;
-  width: 85%;
-  height: 85%;
+  width: 95%;
+  height: 95%;
 }
 
 #search_box {
   grid-row: 2/3;
   grid-template-rows: 1fr 1fr;
-  width: 85%;
-  height: 85%;
+  width: 95%;
+  height: 95%;
 }
 
 #country_box,
@@ -117,8 +117,8 @@ body {
 .condition,
 .wind,
 .temperature {
-  width: 85%;
-  height: 85%;
+  width: 95%;
+  height: 95%;
   display: grid;
   align-items: center;
   justify-items: center;
@@ -126,7 +126,7 @@ body {
 }
 
 .condition img {
-  width: 50%;
+  height: 100%;
 }
 
 .direction,
@@ -148,6 +148,26 @@ body {
 .reported_temperature,
 .condition_text {
   font-weight: bolder;
+}
+
+.condition {
+  grid-column: 1/3;
+  width: calc(95% + 1rem);
+}
+
+.wind {
+  grid-column: 2/3;
+  grid-row: 2/3;
+}
+
+.temperature {
+  grid-column: 1/2;
+  grid-row: 2/3;
+}
+
+#get_weather_button:hover,
+#get_weather_button:active {
+  background-color: rgba(255, 255, 255, 0.5);
 }
 
 @media (max-width: 768px) {
