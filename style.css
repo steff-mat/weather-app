@@ -73,7 +73,15 @@ body {
 .country,
 .city,
 .time_zone,
-.time {
+.time,
+.condition,
+.wind,
+.temperature,
+.other,
+.direction,
+.speed,
+.reported,
+.feels_like {
   background-color: rgba(255, 255, 255, 0.5);
   border: 2px solid rgba(87, 87, 87, 0.25);
 }
@@ -115,7 +123,6 @@ body {
   align-items: center;
   justify-items: center;
   box-shadow: var(--shadow);
-  background-color: rgb(100, 100, 100);
 }
 
 .condition img {
@@ -132,7 +139,6 @@ body {
   box-shadow: var(--shadow);
   width: 85%;
   height: 85%;
-  background-color: rgb(150, 150, 150);
 }
 
 .wind_direction,

@@ -1,4 +1,4 @@
-const apiKey = '536b2f3b7210429391c184304231805';
+const apiKey = '9fc240a4a1f0455c91b172514231905';
 
 const searchBar = document.getElementById('search_bar');
 const getWeatherButton = document.getElementById('get_weather_button');
@@ -47,9 +47,13 @@ async function getRawData(userCity) {
   conditionImg.alt = '';
   try {
     const response = await fetch(
-      `http://api.weatherapi.com/v1/current.json?key=${apiKey}&q=${userCity}&days=3&aqi=no`
+      `http://api.weatherapi.com/v1/current.json?key=${apiKey}&q=${userCity}&days=3&aqi=no` &&
+        `http://api.weatherapi.com/v1/forecast.json?key=${apiKey}&q=${userCity}&days=3&aqi=no`
     );
     const rawData = await response.json();
+
+    console.log(rawData);
+
     country.innerText = rawData.location.country;
     city.innerText = rawData.location.name;
     timeZone.innerText = rawData.location.tz_id;
@@ -68,23 +72,29 @@ async function getRawData(userCity) {
       .join('')
       .split(':')[0];
 
-    console.log(reqTime);
-
     switch (true) {
       case reqTime > 0 && reqTime < 6:
         locationBackground.style.backgroundImage =
+          'linear-gradient(0deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 35%, rgba(0,212,255,1) 100%)';
+        weatherBackground.style.backgroundImage =
           'linear-gradient(0deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 35%, rgba(0,212,255,1) 100%)';
         break;
       case reqTime > 6 && reqTime < 12:
         locationBackground.style.backgroundImage =
           'linear-gradient(0deg, rgba(34,193,195,1) 0%, rgba(253,187,45,1) 100%)';
+        weatherBackground.style.backgroundImage =
+          'linear-gradient(0deg, rgba(34,193,195,1) 0%, rgba(253,187,45,1) 100%)';
         break;
       case reqTime > 12 && reqTime < 18:
         locationBackground.style.backgroundImage =
           'linear-gradient(0deg, rgba(195,34,153,1) 0%, rgba(253,125,45,1) 100%)';
+        weatherBackground.style.backgroundImage =
+          'linear-gradient(0deg, rgba(195,34,153,1) 0%, rgba(253,125,45,1) 100%)';
         break;
       case reqTime > 18 && reqTime < 24:
         locationBackground.style.backgroundImage =
+          'linear-gradient(0deg, rgba(42,34,195,1) 0%, rgba(191,45,253,1) 100%)';
+        weatherBackground.style.backgroundImage =
           'linear-gradient(0deg, rgba(42,34,195,1) 0%, rgba(191,45,253,1) 100%)';
         break;
     }
