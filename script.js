@@ -91,7 +91,7 @@ async function getRawData(userCity) {
         weatherBackground.style.backgroundImage =
           'linear-gradient(0deg, rgba(195,34,153,1) 0%, rgba(253,125,45,1) 100%)';
         break;
-      case reqTime > 18 && reqTime < 24:
+      case reqTime > 18 && reqTime < 25:
         locationBackground.style.backgroundImage =
           'linear-gradient(0deg, rgba(42,34,195,1) 0%, rgba(191,45,253,1) 100%)';
         weatherBackground.style.backgroundImage =
