@@ -1,0 +1,34 @@
+body {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+}
+
+#location_body {
+  background-color: lightblue;
+  display: grid;
+  grid-template-rows: 3fr 1fr;
+}
+
+#weather_body {
+  background-color: lightsalmon;
+}
+
+#location_body,
+#weather_body {
+  height: 100dvh;
+  width: auto;
+}
+
+#country_box {
+  grid-row: 1/2;
+  width: 1fr;
+  height: 1fr;
+  background-color: lightcyan;
+}
+
+#search_box {
+  grid-row: 2/3;
+  width: 1fr;
+  height: 1fr;
+  background-color: lightgreen;
+}
