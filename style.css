@@ -167,7 +167,7 @@ body {
 
 #get_weather_button:hover,
 #get_weather_button:active {
-  background-color: rgba(255, 255, 255, 0.5);
+  background-color: rgba(255, 255, 255, 0.75);
 }
 
 @media (max-width: 768px) {
