@@ -24,17 +24,16 @@ body {
   grid-template-columns: 1fr 2fr;
   gap: 1rem;
   background-color: black;
+  transition: all 500ms;
 }
 
 #location_body {
   grid-template-rows: 3fr 1fr;
-  background-color: rgb(50, 50, 50);
 }
 
 #weather_body {
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr 1fr;
-  background-color: rgb(50, 50, 50);
 }
 
 #location_body,
@@ -58,7 +57,6 @@ body {
   grid-row: 1/2;
   width: 85%;
   height: 85%;
-  background-color: rgb(100, 100, 100);
 }
 
 #search_box {
@@ -66,18 +64,29 @@ body {
   grid-template-rows: 1fr 1fr;
   width: 85%;
   height: 85%;
-  background-color: rgb(100, 100, 100);
+}
+
+#country_box,
+#search_box,
+#search_bar,
+#get_weather_button,
+.country,
+.city,
+.time_zone,
+.time {
+  background-color: rgba(255, 255, 255, 0.5);
+  border: 2px solid rgba(87, 87, 87, 0.25);
 }
 
 #search_bar,
 #get_weather_button {
   width: 85%;
   min-height: 50%;
-  font-size: 2rem;
   text-align: center;
   box-shadow: var(--shadow);
-  background-color: rgb(150, 150, 150);
+
   display: grid;
+  align-items: center;
 }
 
 #search_bar::placeholder {
@@ -88,11 +97,10 @@ body {
 .city,
 .time_zone,
 .time {
-  background-color: rgb(150, 150, 150);
   display: grid;
   width: 85%;
   min-height: 50%;
-  font-size: 2rem;
+  /* font-size: 2rem; */
   text-align: center;
   justify-items: center;
   box-shadow: var(--shadow);
@@ -103,16 +111,11 @@ body {
 .temperature {
   width: 85%;
   height: 85%;
-  font-size: 3rem;
   display: grid;
   align-items: center;
   justify-items: center;
   box-shadow: var(--shadow);
   background-color: rgb(100, 100, 100);
-}
-
-.condition {
-  font-size: 3rem;
 }
 
 .condition img {
@@ -132,18 +135,13 @@ body {
   background-color: rgb(150, 150, 150);
 }
 
-.reported_temperature {
-  font-size: 7.5rem;
-}
-
-[class*='set_'] {
-  font-size: 3rem;
-}
-
 .wind_direction,
 .wind_speed,
-.feels_like_temp {
-  font-size: 4rem;
+.feels_like_temp,
+[class*='set_'],
+.reported_temperature,
+.condition_text {
+  font-weight: bolder;
 }
 
 @media (max-width: 768px) {

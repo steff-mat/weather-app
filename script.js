@@ -12,6 +12,8 @@ const windDirection = document.querySelector('.wind_direction');
 const windSpeed = document.querySelector('.wind_speed');
 const reportedTemperature = document.querySelector('.reported_temperature');
 const feelsLike = document.querySelector('.feels_like_temp');
+const locationBackground = document.querySelector('#location_body');
+const weatherBackground = document.querySelector('#weather_body');
 
 const cities = [
   'Budapest',
@@ -60,7 +62,32 @@ async function getRawData(userCity) {
     conditionImg.alt = rawData.current.condition.text;
     conditionText.innerText = rawData.current.condition.text;
     searchBar.value = '';
-    console.log(rawData);
+    const reqTime = currentTime.innerText
+      .split('')
+      .splice(11)
+      .join('')
+      .split(':')[0];
+
+    console.log(reqTime);
+
+    switch (true) {
+      case reqTime > 0 && reqTime < 6:
+        locationBackground.style.backgroundImage =
+          'linear-gradient(0deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 35%, rgba(0,212,255,1) 100%)';
+        break;
+      case reqTime > 6 && reqTime < 12:
+        locationBackground.style.backgroundImage =
+          'linear-gradient(0deg, rgba(34,193,195,1) 0%, rgba(253,187,45,1) 100%)';
+        break;
+      case reqTime > 12 && reqTime < 18:
+        locationBackground.style.backgroundImage =
+          'linear-gradient(0deg, rgba(195,34,153,1) 0%, rgba(253,125,45,1) 100%)';
+        break;
+      case reqTime > 18 && reqTime < 24:
+        locationBackground.style.backgroundImage =
+          'linear-gradient(0deg, rgba(42,34,195,1) 0%, rgba(191,45,253,1) 100%)';
+        break;
+    }
   } catch (error) {
     console.log('Something went wrong ');
   }
