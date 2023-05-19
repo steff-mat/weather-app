@@ -24,23 +24,12 @@ const cities = [
   'Barcelona',
 ];
 
-// getRawData('Budapest');
-console.log(cities[0]);
-// setInterval(getCity(cities), 1000);
-// function getCity(x) {
-//   for (let i = 0; i < cities.length; i++) {
-//     console.log(x[i]);
-//     return x[i];
-//   }
-// }
-//   getRawData(setInterval(cities[i], 1000));
-
-// getWeatherButton.addEventListener('click', (e) => {
-//   e.preventDefault(); //! Remove once done
-//   if (searchBar.value !== '') {
-//     getRawData(searchBar.value);
-//   }
-// });
+getWeatherButton.addEventListener('click', (e) => {
+  e.preventDefault(); //! Remove once done
+  if (searchBar.value !== '') {
+    getRawData(searchBar.value);
+  }
+});
 
 async function getRawData(userCity) {
   country.innerText = '...';
