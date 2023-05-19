@@ -187,10 +187,6 @@ body {
   display: none;
 }
 
-.ct {
-  color: transparent;
-}
-
 @media (max-width: 768px) {
   body {
     grid-template-rows: auto;
