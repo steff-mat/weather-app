@@ -72,26 +72,28 @@ async function getRawData(userCity) {
       .join('')
       .split(':')[0];
 
+    const intTime = parseInt(reqTime);
+
     switch (true) {
-      case reqTime >= 0 && reqTime <= 6:
+      case intTime >= 0 && intTime < 6:
         locationBackground.style.backgroundImage =
           'linear-gradient(0deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 35%, rgba(0,212,255,1) 100%)';
         weatherBackground.style.backgroundImage =
           'linear-gradient(0deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 35%, rgba(0,212,255,1) 100%)';
         break;
-      case reqTime >= 6 && reqTime <= 12:
+      case intTime >= 6 && intTime < 12:
         locationBackground.style.backgroundImage =
           'linear-gradient(0deg, rgba(34,193,195,1) 0%, rgba(253,187,45,1) 100%)';
         weatherBackground.style.backgroundImage =
           'linear-gradient(0deg, rgba(34,193,195,1) 0%, rgba(253,187,45,1) 100%)';
         break;
-      case reqTime >= 12 && reqTime <= 18:
+      case intTime >= 12 && intTime < 18:
         locationBackground.style.backgroundImage =
           'linear-gradient(0deg, rgba(195,34,153,1) 0%, rgba(253,125,45,1) 100%)';
         weatherBackground.style.backgroundImage =
           'linear-gradient(0deg, rgba(195,34,153,1) 0%, rgba(253,125,45,1) 100%)';
         break;
-      case reqTime >= 18 && reqTime <= 24:
+      case intTime >= 18 && intTime < 24:
         locationBackground.style.backgroundImage =
           'linear-gradient(0deg, rgba(42,34,195,1) 0%, rgba(191,45,253,1) 100%)';
         weatherBackground.style.backgroundImage =
