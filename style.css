@@ -21,7 +21,6 @@ p {
 body {
   display: grid;
   grid-template-columns: 1fr 2fr;
-  background-color: white;
   transition: all 500ms;
 }
 
@@ -216,5 +215,17 @@ body {
   .feels_like_temp,
   [class*='set_'] {
     font-size: 1rem;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  body {
+    background-color: black;
+  }
+}
+
+@media (prefers-color-scheme: light) {
+  body {
+    background-color: white;
   }
 }
